@@ -1,0 +1,49 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.contents {
+    position: absolute;
+    width: 672px;
+    height: 80px;
+    left: 164px;
+    top: 100px;
+}
+.fiboTitle {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 79px;
+    display: flex;
+    align-items: flex-end;
+    color: #373A3C;
+}
+.fiboInput {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #373A3C;
+}
+input.inputTxt {
+    width: 86px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.alert {
+    width: 170px;
+    height: 32px;
+    font-size: 12px;
+    padding-top: 6px;
+    left: 100px;
+}
