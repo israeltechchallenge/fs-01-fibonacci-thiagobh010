@@ -2,7 +2,7 @@ spinnerHide();
 let x = 0;
 let y = 0;
 
-function fiboN(n) {
+/*function fiboN(n) {
   let a = 0, b = 1, c, i;
   if (n == 0)
     return a;
@@ -12,7 +12,7 @@ function fiboN(n) {
     b = c;
   }
   return b;
-}
+} */
 
 function spinnerShow(){
   document.getElementById('fiboResp').innerHTML = '';
@@ -37,8 +37,8 @@ function fiboCalc() {
   if (x < 1) {
     spinnerHide();
     return document.getElementById('fiboResp').innerHTML = "Number can't be smaller than 1";
-  }
-  y = fiboN(x);
+  } 
+  callServer(x);    // y = fiboN(x);
   spinnerHide();
   document.getElementById('fiboResp').innerHTML = y;
 };
@@ -48,3 +48,26 @@ function spinnerHide() {
     document.getElementById('hideSpin').style.visibility = 'hidden';
   }, 100);
 };
+
+function callServer(x) {
+  fetch(`http://localhost:5050/fibonacci/${x}`)
+    .then(response => {
+      console.log('response: ', response);
+      if (response.ok) {
+        response.json()
+          .then(data => {
+            spinnerHide();
+            console.log('Resp: ', data.result);
+            document.getElementById('fiboResp').style.color = '#373A3C';
+            document.getElementById('fiboResp').innerHTML = data.result;
+          })
+          .catch((err)=>{
+            console.log('Err Resp: ', err);
+          });
+      }else {
+        spinnerHide();
+        document.getElementById('fiboResp').innerHTML = "42 is the meaning of life";
+        return document.getElementById('fiboResp').style.color = '#FF0000';
+      }
+    }) 
+} 
