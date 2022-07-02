@@ -1,18 +1,9 @@
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-  -moz-appearance: textfield;
-}
 .contents {
     position: absolute;
-    width: 672px;
+    width: 800px;
     height: 80px;
-    left: 164px;
-    top: 100px;
+    left: 160px;
+    top: 40px;
 }
 .fiboTitle {
     font-family: Open Sans;
@@ -46,4 +37,13 @@ input.inputTxt {
     font-size: 12px;
     padding-top: 6px;
     left: 100px;
+}
+.spinner-border {
+    width: 20px;
+    height: 20px;
+}
+#listResults p {
+    border-bottom: 1px solid #373A3C;
+    padding:4px;
+    margin:2px;
 }
